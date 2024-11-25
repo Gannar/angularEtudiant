@@ -2,8 +2,8 @@
  <div class="col-sm-4 col-md-4 col-lg-4 mb-4"> 
         <app-update-institut
         [institut]="updatedInstitut"
-        (institutUpdated_V)="institutUpdated($event)"
         [ajout]="ajout"
+        (categorieUpdated)="categorieUpdated=$event;institutUpdated(categorieUpdated)"
         ></app-update-institut>
     </div>
     <div class="card shadow mb-4">
@@ -35,4 +35,3 @@
       </div>
     </div>
   </div>
-  

@@ -6,18 +6,14 @@ import { Institut } from '../model/institut.model';
   templateUrl: './update-institut.component.html',
   styleUrl: './update-institut.component.css'
 })
-export class UpdateInstitutComponent implements OnInit{
+export class UpdateInstitutComponent implements OnInit {
+  @Input()  ajout!: boolean;
+  @Input()  institut!: Institut;
+  @Output()  categorieUpdated = new EventEmitter<Institut>();
   ngOnInit(): void {
-    console.log("ngOnInit du composant UpdateInstitut ",this.institut);
-
+    console.log("ngOnInit du composant UpdateInstitut ", this.institut);
   }
-  @Input()
-  institut! : Institut;
-  @Output()
-categorieUpdated = new EventEmitter<Institut>();
-saveInstitut(){
-  this.categorieUpdated.emit(this.institut);
+  saveInstitut() {
+    this.categorieUpdated.emit(this.institut);
   }
-  @Input()
-ajout!:boolean;
 }

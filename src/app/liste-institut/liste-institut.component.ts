@@ -16,7 +16,7 @@ export class ListeInstitutComponent implements OnInit{
   updatedInstitut: Institut = { idI: 0, nomI: "",localisation:"",numTlf:0 };  // Type à mettre à jour
   ajout: boolean = true;  // Mode ajout ou modification
   currentId: number = 0;
-  institutUpdated_V!:any;
+  categorieUpdated!:any;
 
   constructor(private institutService: InstitutService,private serviceComponent : ServicesComponent  )  { }
 
@@ -24,7 +24,7 @@ export class ListeInstitutComponent implements OnInit{
     /*this.serviceComponent.listeInstituts().subscribe(cats => {this.instituts= cats._embedded.instituts;
 console.log(cats);
 });*/
-this.serviceComponent.listeInstituts().subscribe((wrapper: InstitutWrapper) => {
+  this.serviceComponent.listeInstituts().subscribe((wrapper: InstitutWrapper) => {
   // Extraire les instituts depuis _embedded
   this.instituts = wrapper._embedded.instituts;
   console.log(this.instituts); // Vérifiez que le tableau est correctement extrait
