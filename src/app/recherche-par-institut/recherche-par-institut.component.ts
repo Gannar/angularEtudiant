@@ -30,4 +30,6 @@ export class RechercheParInstitutComponent implements OnInit {
     console.log('Étudiants après filtrage:', this.etudiant);
 
   }
+
+  supprimerEtudiant(event:any){}
 }

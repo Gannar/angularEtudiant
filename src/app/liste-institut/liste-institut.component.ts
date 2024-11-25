@@ -12,10 +12,11 @@ import { InstitutWrapper } from '../model/institutWrapped.model';
 export class ListeInstitutComponent implements OnInit{
  
 
-instituts!:Institut[];  // Liste des types
+  instituts!:Institut[];  // Liste des types
   updatedInstitut: Institut = { idI: 0, nomI: "",localisation:"",numTlf:0 };  // Type à mettre à jour
   ajout: boolean = true;  // Mode ajout ou modification
   currentId: number = 0;
+  institutUpdated_V!:any;
 
   constructor(private institutService: InstitutService,private serviceComponent : ServicesComponent  )  { }
 
